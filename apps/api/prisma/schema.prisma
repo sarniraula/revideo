@@ -12,3 +12,13 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model Video {
+  id          String   @id @default(cuid())
+  projectId   String
+  userId      String
+  originalUrl String
+  status      String   @default("UPLOADING") // UPLOADING, UPLOADED, PROCESSING
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

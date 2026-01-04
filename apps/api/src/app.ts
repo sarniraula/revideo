@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import videoRoutes from "./routes/video.routes";
 
 const app = express();
 
@@ -12,5 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/health", (_req, res) => {
   res.status(200).json({ status: "ok" });
 });
+
+// VIDEO routes
+app.use("/videos", videoRoutes);
 
 export default app;
