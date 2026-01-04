@@ -1,0 +1,18 @@
+{
+  "name": "bulbul",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently -n WEB,API,WORKER -c blue,green,magenta \"npm run dev:web\" \"npm run dev:api\" \"npm run dev:worker\"",
+
+    "dev:web": "cd apps/web && npm run dev",
+    "dev:api": "cd apps/api && npm run dev",
+    "dev:worker": "cd apps/worker && npm run dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
